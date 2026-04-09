@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header-bg {
+    background-color: black;
+}
+
+.header {
+    display: flex;
+    /*para alinhar os elementos ao lado do outro*/
+
+    flex-wrap: wrap;
+    /*para quebrar o menu conforme for diminuindo a tela*/
+
+    gap: 20px;
+    /*espaçamento entre os elementos*/
+
+    justify-content: space-between;
+    /*ter uma distancia entre os elementos um na ponta outro na outra*/
+
+    padding: 20px;
+    /*espaçamento interno*/
+
+    align-items: center;
+    /*alinhar na vertical*/
+
+    max-width: 1200px;
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+}
+
+.header-menu {
+    display: flex;
+
+    gap: 40px;
+
+    flex-wrap: wrap;
+
+}
+
+.header-menu a {
+    color: white;
+
+    padding: 16px 0px;
+
+    display: inline-block;
+    /*permite que elementos fiquem lado a lado na mesma linha
+     (como inline) 
+    e, ao mesmo tempo, aceitem definições de largura (width), altura (height), margens 
+    e paddings verticais (como block).
+     É ideal para criar layouts em grade ou menus horizontais.*/
+
+    text-decoration: none;
+    /*tirar sublinhado do link*/
+
+    list-style: none;
+    /*tirar a bolinha da lista*/
+
+    font-size: 18px;
+    /*tamanho da letra*/
+
+    position: relative;
+    /* coloquei pois o elemento filho
+    que é o position absolute tem que ficar relacionado
+    com o pai, pois ele tava em relaçao ao body e
+    a linha crescia em relaçao ao body ocupando
+    mais espaço*/
+}
+
+
+.header-menu a:after {
+    content: '';
+    /*conteudo*/
+
+    display: block;
+    /* display block para aparecer o sublinhado*/
+
+    width: 0%;
+    /*fica escondido ate passar o mouse*/
+
+    height: 2px;
+
+    background-color: aliceblue;
+
+    margin-top: 4px;
+
+    transition: 0.4s;
+    /*tempo de transiçao do elemento*/
+
+    position: absolute;
+    /* para tirar o after do fluxo e nao atrapalhar
+o alinhamento*/
+}
+
+
+.header-menu a:hover:after {
+    width: 100%;
+}
+
+/*quando passar o mouse por cima aciona o after*/
+
+
+
+
+
+@media(max-width: 800px) {
+
+    .header-menu {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        list-style: none;
+    }
+
+    .header-menu a {
+        background-color: #595959;
+        padding: 12px 16px;
+        border-radius: 5px;
+        font-size: 18px;
+
+
+    }
+
+    .header-menu a:hover {
+        background-color: #404040;
+    }
+
+    .header-menu a:hover:after {
+        display: none; /*tira o sublinhado do menu*/
+    }
+
+
+}
+
+
+
+
+@media(max-width: 600px) {
+
+    .header-menu {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        list-style: none;
+    }
+
+    .header-menu a {
+        background-color: #595959;
+        padding: 8px 12px;
+        border-radius: 3px;
+        font-size: 14px;
+
+    }
+
+    .header-menu a:hover {
+        background-color: #404040;
+    }
+
+      .header-menu a:hover:after {
+        display: none;
+    }
+
+
+}
